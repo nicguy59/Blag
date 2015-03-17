@@ -1,0 +1,6 @@
+<% @posts.each do |current_post| %>
+<h3>Post: </h3>
+<pre><%= current_post.title %></pre>
+
+<%= link_to('New Comment', new_post_comment_path(current_post)) %>
+<% end %>  

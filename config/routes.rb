@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+
+  resources :posts, only: [:index] do #lock down the routes to just a page or pages, "do" nests the next resource
+    resources :comments, only: [:new, :create]
+  end  
+
+  root 'posts#index'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
